@@ -28,7 +28,7 @@ export class LoginPage implements OnInit {
 
   
   ngOnInit(): void {    
-    this.cargarLoading('Bienvenido(a) a RegistrApp');
+    this.cargarLoading('Bienvenido(a) a RegistrAPP');
 
     console.log('OnInit');
   }
