@@ -1,7 +1,7 @@
-<ion-header >
+<ion-header>
   <ion-toolbar class="toolbar">
 
-    <ion-buttons  slot="start">
+    <ion-buttons slot="start">
     </ion-buttons>
 
     <ion-title class="ion-text-capitalize">
@@ -15,8 +15,47 @@
 <ion-content>
   <div id="container">
     <strong>Integrantes</strong>
-    <p>Diego Cabrera</p>
-    <p>Nicolas Miranda</p>
-    <p>Rene Bolzan</p>
+
+    <div class="row item-12">
+      <ion-accordion-group>
+        <ion-accordion value="first">
+          <ion-item slot="header" color="light">
+            <ion-label class="carrera">Diego Cabrera</ion-label>
+          </ion-item>
+          <div class="ion-padding" slot="content">
+            <img class="logo item-6" width="20%" src="../../../assets/img/1239318.png">
+            <p class="carrera">Analista Programador Computacional</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit quod est, necessitatibus nostrum
+              doloremque officiis consectetur. Illo soluta reprehenderit exercitationem commodi modi corporis tenetur,
+              maxime laudantium id quis provident odit.</p>
+          </div>
+        </ion-accordion>
+        <ion-accordion value="second">
+          <ion-item slot="header" color="light">
+            <ion-label class="carrera">Rene Bolzan</ion-label>
+          </ion-item>
+          <div class="ion-padding" slot="content">
+            <img class="logo item-6" width="20%" src="../../../assets/img/1239318.png">
+            <p class="carrera">Analista Programador Computacional</p>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Officiis dolore doloremque error cumque tempore
+              tempora non! Quo veniam ab est nulla animi pariatur voluptatem soluta incidunt nostrum, repellendus ipsam.
+              Sed?</p>
+          </div>
+        </ion-accordion>
+        <ion-accordion value="third">
+          <ion-item slot="header" color="light">
+            <ion-label class="carrera">Nicolas Miranda</ion-label>
+          </ion-item>
+          <div class="ion-padding" slot="content">
+            <img class="logo item-6" width="20%" src="../../../assets/img/1239318.png">
+            <p class="carrera">Analista Programador Computacional</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores tempora eius illo tenetur adipisci
+              libero, praesentium similique pariatur autem earum. Ipsa cumque nisi architecto inventore perferendis quis
+              excepturi exercitationem nostrum.</p>
+          </div>
+        </ion-accordion>
+      </ion-accordion-group>
+      <p class="item-6"></p>
+    </div>
   </div>
 </ion-content>
