@@ -12,7 +12,7 @@ import { Icon } from 'ionicons/dist/types/components/icon/icon';
 export class LoginPage implements OnInit {
 
   pageTitle = 'login';
-  Visible = true;
+  isNotLogin = false;
   loading : HTMLIonLoadingElement;
   //Model
   user : any ={
@@ -24,8 +24,10 @@ export class LoginPage implements OnInit {
 
   constructor(private toastCtrl: ToastController, private router: Router,private loadingCtrl: LoadingController) { }
 
+  
   ngOnInit(): void {    
-    this.cargarLoading('Welcome a Lala Entertainmet!!!');
+    this.cargarLoading('Bienvenido(a) a RegistrApp');
+
     console.log('OnInit');
   }
 

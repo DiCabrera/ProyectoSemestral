@@ -6,11 +6,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.page.scss'],
 })
 export class HomePage implements OnInit {
-  public appPages = [
-    { title: 'Bienvenida', url: '/welcome', icon: 'mail' },
-    { title: 'conversor', url: '/', icon: 'paper-plane' },
-    { title: 'about', url: '/', icon: 'heart' }
-  ];
+
+  pageTitle='Home';
+  isNotLogin = true;
+  
   constructor() { }
 
   ngOnInit() {
