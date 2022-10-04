@@ -7,6 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AboutPage implements OnInit {
 
+  pageTitle='About';
+  isNotLogin = true;
+
   constructor() { }
 
   ngOnInit() {

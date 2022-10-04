@@ -7,6 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ConversorPage implements OnInit {
 
+  pageTitle='Conversor';
+  isNotLogin = true;
+
   constructor() { }
 
   ngOnInit() {

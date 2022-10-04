@@ -26,7 +26,12 @@ const routes: Routes = [
   {
     path: 'conversor',
     loadChildren: () => import('./pages/conversor/conversor.module').then( m => m.ConversorPageModule)
+  },
+  {
+    path: 'welcome',
+    loadChildren: () => import('./pages/welcome/welcome.module').then( m => m.WelcomePageModule)
   }
+
 ];
 
 @NgModule({
