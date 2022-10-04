@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ToastController,LoadingController, IonIcon } from '@ionic/angular';
 import { Icon } from 'ionicons/dist/types/components/icon/icon';
+import { MenuController } from '@ionic/angular';
+
  
 
 @Component({
@@ -22,13 +24,17 @@ export class LoginPage implements OnInit {
 
   field: string = '';
 
-  constructor(private toastCtrl: ToastController, private router: Router,private loadingCtrl: LoadingController) { }
+  constructor(private toastCtrl: ToastController, private router: Router,private loadingCtrl: LoadingController,public menuCtrl: MenuController) { }
 
   
   ngOnInit(): void {    
     this.cargarLoading('Bienvenido(a) a RegistrApp');
 
     console.log('OnInit');
+  }
+
+  ionViewWillEnter() {
+    this.menuCtrl.enable(false);
   }
 
   login(){
