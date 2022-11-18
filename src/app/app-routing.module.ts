@@ -30,7 +30,15 @@ const routes: Routes = [
   {
     path: 'welcome',
     loadChildren: () => import('./pages/welcome/welcome.module').then( m => m.WelcomePageModule)
-  }
+  },
+  {
+    path: 'page404',
+    loadChildren: () => import('./pages/page404/page404.module').then( m => m.Page404PageModule)
+  },
+  {
+    path: '**',
+    redirectTo: '/404'
+  },
 
 ];
 

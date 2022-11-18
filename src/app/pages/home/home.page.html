@@ -1,19 +1,23 @@
-<ion-header >
-  <ion-toolbar color="primary" class="toolbar">
+<ion-header class="row">
+  <ion-toolbar color="primary" class="toolbar row">
+    <div>
+      <ion-buttons slot="start">
+      </ion-buttons>
+    </div>
 
-    <ion-buttons  slot="start">
-    </ion-buttons>
-
-    <ion-title class="ion-text-capitalize">
-      {{pageTitle}}
-    </ion-title>
-
+    <div class="row">
+      <ion-title class="ion-text-capitalize">
+        {{pageTitle}}
+      </ion-title>
+      <div class="logo-duoc">
+        <img  width="90px" src="../../../assets/img/logoDuoc.png">
+      </div>
+    </div>
   </ion-toolbar>
-  <img class="logo-duoc" src="../../../assets/img/logoDuoc.png">
 </ion-header>
 
 <ion-content>
-<!--
+  <!--
   <ion-app>
     <ion-menu contentId="main-content" type="overlay">
       <ion-content>

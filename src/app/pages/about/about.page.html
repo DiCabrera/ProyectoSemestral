@@ -1,15 +1,19 @@
-<ion-header>
-  <ion-toolbar color="primary" class="toolbar">
+<ion-header class="row">
+  <ion-toolbar color="primary" class="toolbar row">
+    <div>
+      <ion-buttons slot="start">
+      </ion-buttons>
+    </div>
 
-    <ion-buttons slot="start">
-    </ion-buttons>
-
-    <ion-title text-aling="center" class="ion-text-capitalize title">
-      {{pageTitle}}
-    </ion-title>
-
+    <div class="row">
+      <ion-title class="ion-text-capitalize">
+        {{pageTitle}}
+      </ion-title>
+      <div class="logo-duoc">
+        <img width="90px" src="../../../assets/img/logoDuoc.png">
+      </div>
+    </div>
   </ion-toolbar>
-  <img class="logo-duoc" src="../../../assets/img/logoDuoc.png">
 </ion-header>
 
 <ion-content>
@@ -18,28 +22,16 @@
 
     <div class="row item-12">
       <ion-accordion-group>
-        <ion-accordion value="first">
-          <ion-item slot="header" color="light">
-            <ion-label class="carrera">Diego Cabrera</ion-label>
-          </ion-item>
-          <div class="ion-padding" slot="content">
-            <img class="logo item-6" width="20%" src="../../../assets/img/1239318.png">
-            <p class="carrera">Analista Programador Computacional</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit quod est, necessitatibus nostrum
-              doloremque officiis consectetur. Illo soluta reprehenderit exercitationem commodi modi corporis tenetur,
-              maxime laudantium id quis provident odit.</p>
-          </div>
-        </ion-accordion>
         <ion-accordion value="second">
           <ion-item slot="header" color="light">
             <ion-label class="carrera">Rene Bolzan</ion-label>
           </ion-item>
           <div class="ion-padding" slot="content">
-            <img class="logo item-6" width="20%" src="../../../assets/img/1239318.png">
+            <img class="imgs item-6" width="30%" height="30%" src="../../../assets/fotos/img_rene.png">
             <p class="carrera">Analista Programador Computacional</p>
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Officiis dolore doloremque error cumque tempore
-              tempora non! Quo veniam ab est nulla animi pariatur voluptatem soluta incidunt nostrum, repellendus ipsam.
-              Sed?</p>
+            <p>Soy una persona que le agrada trabajar en equipo, buscando nuevos aprendizajes en mi camino frente al
+              gran mundo que enfrentamos diariamente. Busco desenvolverme en el mundo de la programación. Domino dos
+              lenguas: Inglés y Castellano. </p>
           </div>
         </ion-accordion>
         <ion-accordion value="third">
@@ -47,11 +39,13 @@
             <ion-label class="carrera">Nicolas Miranda</ion-label>
           </ion-item>
           <div class="ion-padding" slot="content">
-            <img class="logo item-6" width="20%" src="../../../assets/img/1239318.png">
+            <img class="imgs item-6" width="30%" height="30%" src="../../../assets/fotos/img_nico.jpeg">
             <p class="carrera">Analista Programador Computacional</p>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores tempora eius illo tenetur adipisci
-              libero, praesentium similique pariatur autem earum. Ipsa cumque nisi architecto inventore perferendis quis
-              excepturi exercitationem nostrum.</p>
+            <p>Durante este periodo he desempeñado diversos roles tales como programador (Java, TypeScript, Python, JavaScript), Líder
+              técnico y Analista funcional.
+              Además he podido participar en la construcción de soluciones tecnológicas en diversas área, como
+              es, planificar, analizar, desarrollar y supervisar proyectos con metodología tradicional(Gestión de
+              proyecto).</p>
           </div>
         </ion-accordion>
       </ion-accordion-group>
