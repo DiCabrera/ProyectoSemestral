@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { NavigationExtras, Router } from '@angular/router';
 import { ToastController, LoadingController, IonIcon, AlertController, NavController } from '@ionic/angular';
 import { Icon } from 'ionicons/dist/types/components/icon/icon';
 import { MenuController } from '@ionic/angular';
@@ -23,7 +23,7 @@ export class LoginPage implements OnInit {
     username: '',
     password: '',
   }
-
+  
   field: string = '';
 
   constructor(public fb: FormBuilder, public navCtrl: NavController, private toastCtrl: ToastController, private router: Router, private loadingCtrl: LoadingController, public menuCtrl: MenuController) {
@@ -45,16 +45,28 @@ export class LoginPage implements OnInit {
   }
 
   login() {
+    console.log(this.user);
+    console.log('dcdcd');
     if (this.validateModel(this.user)) {
 
       if (this.user.username == 'ADMIN' && this.user.password == 'admin') {
         this.presentToast('Bienvenido ' + this.user.username);
-        this.router.navigate(['home']);
+        const extras:NavigationExtras={
+          queryParams:{
+            user: JSON.stringify(this.user),
+          }
+        }
+        this.router.navigate(['home'],extras);
       }
 
       else if (this.user.username == 'USER' && this.user.password == 'user') {
         this.presentToast('Bienvenido ' + this.user.username);
-        this.router.navigate(['home']);
+        const extras:NavigationExtras = {
+          queryParams:{
+            user: JSON.stringify(this.user),
+          }
+        }
+        this.router.navigate(['home'],extras);
       }
 
       else {
