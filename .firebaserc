@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "proyecto-semestral-ce970": {
+      "hosting": {
+        "app": [
+          "proyecto-semestral-ce970"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "proyecto-semestral-ce970"
+  }
+}
