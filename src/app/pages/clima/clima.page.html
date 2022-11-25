@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Estado del clima</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="container">
+    <div *ngIf="hasPermission; else failedModule">
+      <div *ngIf="weatherLoaded; else loading">
+        <h1 class="main-title">Estado del clima en {{city}}</h1>
+        <h1 class="temp-title">{{temp}} <span class="temp-title__deg">°C</span></h1>
+        <p class="status-description">{{statusDescription}}</p>
+        <div class="button-center">
+          <ion-button class="button" fill="outline" (click)="loadWeather()">RECARGAR</ion-button>
+        </div>
+      </div>
+      <ng-template #loading>
+        <div class="main-title">Cargando...</div>
+      </ng-template>
+    </div>
+    <ng-template #failedModule>
+      <h1 class="error-title">Necesitamos acceso a tu ubicación</h1>
+    </ng-template>
+  </div>
+</ion-content>

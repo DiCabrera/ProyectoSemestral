@@ -4,14 +4,17 @@
 
 export const environment = {
   production: false,
-  firebaseConfig : {
-    apiKey: "AIzaSyDJd462nVzyraifHC2KxUfOmIbcPXWsXdg",
-    authDomain: "proyecto-semestral-ce970.firebaseapp.com",
-    projectId: "proyecto-semestral-ce970",
-    storageBucket: "proyecto-semestral-ce970.appspot.com",
-    messagingSenderId: "504846135462",
-    appId: "1:504846135462:web:151dad889d27a8933e4467",
-    measurementId: "G-WN8KFH3SLM"
+  firebaseConfig: {
+    apiKey: 'AIzaSyDJd462nVzyraifHC2KxUfOmIbcPXWsXdg',
+    authDomain: 'proyecto-semestral-ce970.firebaseapp.com',
+    projectId: 'proyecto-semestral-ce970',
+    storageBucket: 'proyecto-semestral-ce970.appspot.com',
+    messagingSenderId: '504846135462',
+    appId: '1:504846135462:web:151dad889d27a8933e4467',
+    measurementId: 'G-WN8KFH3SLM',
+  },
+  weather: {
+    key: '78c43c7ed997615bfa3b0debf7667853',
   },
 };
 

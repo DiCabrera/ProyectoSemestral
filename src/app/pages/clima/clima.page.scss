@@ -1,0 +1,26 @@
+ion-title {
+  text-align: center;
+}
+.main-title {
+  font-size: 20px;
+  text-align: center;
+  display: block;
+  margin: 30px auto;
+}
+.temp-title {
+  text-align: center;
+  font-size: 50px;
+  display: flex;
+  justify-content: center;
+  color: var(--ion-color-primary);
+}
+.temp-title__deg {
+  font-size: 30px;
+}
+.status-description {
+  font-size: 20px;
+  text-align: center;
+}
+.button-center {
+  text-align: center;
+}
