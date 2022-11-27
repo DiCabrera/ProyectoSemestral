@@ -10,6 +10,7 @@ export class ClimaPage implements OnInit {
   pageTitle = 'Clima';
   isNotLogin = true;
   city = 'Santiago';
+  hola: number;
   hasPermission = false;
   latitude: number;
   longitude: number;
