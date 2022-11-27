@@ -11,5 +11,5 @@ export class AppComponent {
     { title: 'About', url: '/about', icon: 'people' },
     { title: 'Cerrar Sesión', url: '/login', icon: 'lock-closed' }
   ];
-  constructor() {}
+  constructor() { }
 }

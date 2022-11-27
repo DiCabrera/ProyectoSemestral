@@ -9,16 +9,18 @@ import { Auth,createUserWithEmailAndPassword,signInWithEmailAndPassword } from '
 })
 export class UsuariosService {
 
-constructor(private auth: Auth,private firestore: Firestore){}
+constructor(
+  //private auth: Auth,
+  private firestore: Firestore){}
 
-register({email, password}: any){
+/*register({email, password}: any){
   return createUserWithEmailAndPassword(this.auth, email, password);
 
 }
 
 login({email, password}: any){
 return signInWithEmailAndPassword(this.auth, email,password);
-}
+}*/
 
 
 
