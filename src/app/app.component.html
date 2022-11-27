@@ -12,12 +12,18 @@
               <ion-label>{{ p.title }}</ion-label>
             </ion-item>
           </ion-menu-toggle>
+          <ion-menu-toggle auto-hide="false">
+            <ion-item routerDirection="root" lines="none" detail="false" routerLinkActive="selected" (click)="logout()">
+              <ion-icon color="red" slot="start" ios="lock-closed-outline" md="lock-closed-sharp"></ion-icon>
+              <ion-label>Cerrar Sesión</ion-label>
+            </ion-item>
+          </ion-menu-toggle>
         </ion-list>
       </ion-content>
     </ion-menu>
     <ion-router-outlet id="main-content"></ion-router-outlet>
   </ion-split-pane>
-  
+
   <ionic-content>
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>

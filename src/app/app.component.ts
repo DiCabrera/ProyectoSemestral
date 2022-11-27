@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AuthService } from './services/auth/auth.service';
 @Component({
   selector: 'app-root',
   templateUrl: 'app.component.html',
@@ -10,7 +11,9 @@ export class AppComponent {
     { title: 'Conversor', url: '/conversor', icon: 'planet' },
     { title: 'Clima', url: '/clima', icon: 'cloudy-night' },
     { title: 'About', url: '/about', icon: 'people' },
-    { title: 'Cerrar Sesión', url: '/login', icon: 'lock-closed' },
   ];
-  constructor() {}
+  constructor(private auth: AuthService) {}
+  logout() {
+    this.auth.logout();
+  }
 }

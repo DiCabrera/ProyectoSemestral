@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "ionic-app-97225": {
+      "hosting": {
+        "app": [
+          "ionic-app-97225"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "ionic-app-97225"
+  }
+}
