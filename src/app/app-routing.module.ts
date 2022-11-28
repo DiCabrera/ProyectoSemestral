@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
-import { IngresadoGuard } from './ingresado.guard';
-import { NoIngresadoGuard } from './no-ingresado.guard';
+
 
 const routes: Routes = [
   {
@@ -16,15 +15,12 @@ const routes: Routes = [
   },
   {
     path: 'login',
-    loadChildren: () =>
-      import('./pages/login/login.module').then((m) => m.LoginPageModule),
-    canActivate: [NoIngresadoGuard],
+    loadChildren: () => import('./pages/login/login.module').then(m => m.LoginPageModule),
   },
   {
     path: 'home',
-    loadChildren: () =>
-      import('./pages/home/home.module').then((m) => m.HomePageModule),
-    canActivate: [IngresadoGuard],
+    loadChildren: () => import('./pages/home/home.module').then(m => m.HomePageModule),
+
   },
   {
     path: 'about',
@@ -37,11 +33,6 @@ const routes: Routes = [
       import('./pages/conversor/conversor.module').then(
         (m) => m.ConversorPageModule
       ),
-  },
-  {
-    path: 'welcome',
-    loadChildren: () =>
-      import('./pages/welcome/welcome.module').then((m) => m.WelcomePageModule),
   },
   {
     path: 'clima',
@@ -65,4 +56,4 @@ const routes: Routes = [
   ],
   exports: [RouterModule],
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }

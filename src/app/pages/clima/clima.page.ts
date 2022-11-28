@@ -7,7 +7,10 @@ import { ClimaService } from '../../services/clima/clima.service';
   styleUrls: ['./clima.page.scss'],
 })
 export class ClimaPage implements OnInit {
+  pageTitle = 'Clima';
+  isNotLogin = true;
   city = 'Santiago';
+  hola: number;
   hasPermission = false;
   latitude: number;
   longitude: number;
