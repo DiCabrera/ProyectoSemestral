@@ -1,4 +1,3 @@
-import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 @Injectable({
@@ -6,13 +5,13 @@ import { Injectable } from '@angular/core';
 })
 export class GetapiService {
 
-  constructor(public _http: HttpClient) { }
-  getDataEuro<T>(url:string){
-    url = 'https://mindicador.cl/api/euro/2022';
-    return this._http.get<T[]>(url);
+  constructor() { }
+  getDataEuro<T>() {
+    const url = 'https://mindicador.cl/api/euro/2022';
+    return fetch(url).then(res => res.json());
   }
-  getDataDolar<T>(url:string){
-    url = 'https://mindicador.cl/api/dolar/2022';
-    return this._http.get<T[]>(url);
+  getDataDolar<T>(){
+    const url = 'https://mindicador.cl/api/dolar/2022';
+    return fetch(url).then(res => res.json());
   }
 }
