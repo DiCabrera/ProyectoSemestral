@@ -19,18 +19,13 @@ export class ConversorPage implements OnInit {
   pageTitle = 'Conversor';
   isNotLogin = true;
   dataEuro = null;
-  dataEuroAPeso = null;
   dataDolar = null;
-  dataDolarAPeso = null;
-  chileno = 1;
-  chilenopesos = 0;
   monedaEuro: any = {
     euro: 0,
   };
   monedaDolar: any = {
     dolar: 0,
   };
-  field = '';
   getDat: DataInterface = {
     serie: [],
   };
@@ -40,14 +35,12 @@ export class ConversorPage implements OnInit {
       const valor = this.getDat.serie[0].valor;
       console.log({ valor });
       this.dataEuro = valor;
-      this.dataEuroAPeso = valor;
     });
     this.services.getDataDolar().then((data) => {
       this.getDat = data as unknown as DataInterface;
       const valor = this.getDat.serie[0].valor;
       console.log({ valor });
       this.dataDolar = valor;
-      this.dataDolarAPeso = valor;
     });
     // this._services.getDataEuro<any[]>("").subscribe(data => {
     //   this.getDat = data as unknown as DataInterface;
@@ -66,19 +59,15 @@ export class ConversorPage implements OnInit {
     // })
   }
   clickConvertEuro() {
-    this.monedaEuro.euro = this.monedaEuro.euro * 944.35;
+    this.monedaEuro.euro = this.monedaEuro.euro * this.dataEuro;
     console.log(this.monedaEuro.euro);
     console.log('euro');
-    console.log(this.chileno);
-    console.log('peso');
   }
   clickConvertDolar() {
-    this.monedaDolar.dolar = this.monedaDolar.dolar * 913.45;
+    this.monedaDolar.dolar = this.monedaDolar.dolar * this.dataDolar;
     console.log(this.monedaDolar.dolar);
-    console.log('euro');
-    console.log(this.chileno);
-    console.log('peso');
+    console.log('dolar');
   }
 
-  ngOnInit() {}
+  ngOnInit() { }
 }

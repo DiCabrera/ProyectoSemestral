@@ -11,6 +11,8 @@ export class AppComponent {
     { title: 'Conversor', url: '/conversor', icon: 'planet' },
     { title: 'Clima', url: '/clima', icon: 'cloudy-night' },
     { title: 'About', url: '/about', icon: 'people' },
+    { title: 'Perfil de Usuario', url: '/perfil', icon: 'person-circle' },
+
   ];
   constructor(private auth: AuthService) {}
   logout() {

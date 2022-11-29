@@ -17,6 +17,7 @@ export class LoginPage implements OnInit {
   pageTitle = 'login';
   isNotLogin = false;
   loading: HTMLIonLoadingElement;
+  name: string= '';
 
   constructor(
     public navCtrl: NavController,
@@ -39,7 +40,10 @@ export class LoginPage implements OnInit {
       .login()
       .then((user) => {
         this.presentToast('Bienvenido ' + user.displayName);
-        this.router.navigate(['home']);
+        console.log(user.displayName);
+        this.name = user?.displayName;
+        console.log("dcdcd");
+        this.router.navigate(['home'],{ queryParams: { user: user.displayName } });
       })
       .catch((err) => {
         console.error('Error ->', err);

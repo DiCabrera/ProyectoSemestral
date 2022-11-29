@@ -28,6 +28,7 @@ export class HomePage implements OnInit{
       this.user = params.user;
     }
    });
+   
   }
 
 
