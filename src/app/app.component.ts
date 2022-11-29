@@ -10,6 +10,7 @@ export class AppComponent {
     { title: 'Conversor', url: '/conversor', icon: 'planet' },
     { title: 'Clima', url: '/clima', icon: 'cloudy-night' },
     { title: 'About', url: '/about', icon: 'people' },
+    { title: 'Perfil Usuario', url: '/perfil', icon: 'person-circle' },
     { title: 'Cerrar Sesión', url: '/login', icon: 'lock-closed' },
   ];
   constructor() { }

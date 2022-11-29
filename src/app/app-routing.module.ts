@@ -40,6 +40,10 @@ const routes: Routes = [
       import('./pages/clima/clima.module').then((m) => m.ClimaPageModule),
   },
   {
+    path: 'perfil',
+    loadChildren: () => import('./pages/perfil/perfil.module').then( m => m.PerfilPageModule)
+  },
+  {
     path: 'page404',
     loadChildren: () =>
       import('./pages/page404/page404.module').then((m) => m.Page404PageModule),
@@ -48,6 +52,8 @@ const routes: Routes = [
     path: '**',
     redirectTo: '/404',
   },
+ 
+
 ];
 
 @NgModule({

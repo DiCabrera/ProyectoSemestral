@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { GetapiService } from 'src/app/services/getapi.service';
 
 
+
 interface SerieInterface {
   fecha: string;
   valor: number;
@@ -80,5 +81,4 @@ export class ConversorPage implements OnInit {
 
   ngOnInit() {
   }
-
 }
