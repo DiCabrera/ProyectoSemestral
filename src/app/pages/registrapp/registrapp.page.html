@@ -1,0 +1,15 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>RegistrAPP | {{isTeacher?'Teacher':'Estudiante'}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div *ngIf="isTeacher; else isStudent">
+    <app-class-generator></app-class-generator>
+  </div>
+
+  <ng-template #isStudent>
+    <app-mark-attendance></app-mark-attendance>
+  </ng-template>
+</ion-content>

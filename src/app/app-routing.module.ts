@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 
-
 const routes: Routes = [
   {
     path: '',
@@ -15,12 +14,13 @@ const routes: Routes = [
   },
   {
     path: 'login',
-    loadChildren: () => import('./pages/login/login.module').then(m => m.LoginPageModule),
+    loadChildren: () =>
+      import('./pages/login/login.module').then((m) => m.LoginPageModule),
   },
   {
     path: 'home',
-    loadChildren: () => import('./pages/home/home.module').then(m => m.HomePageModule),
-
+    loadChildren: () =>
+      import('./pages/home/home.module').then((m) => m.HomePageModule),
   },
   {
     path: 'about',
@@ -41,7 +41,15 @@ const routes: Routes = [
   },
   {
     path: 'perfil',
-    loadChildren: () => import('./pages/perfil/perfil.module').then( m => m.PerfilPageModule)
+    loadChildren: () =>
+      import('./pages/perfil/perfil.module').then((m) => m.PerfilPageModule),
+  },
+  {
+    path: 'registrapp',
+    loadChildren: () =>
+      import('./pages/registrapp/registrapp.module').then(
+        (m) => m.RegistrappPageModule
+      ),
   },
   {
     path: 'page404',
@@ -52,8 +60,6 @@ const routes: Routes = [
     path: '**',
     redirectTo: '/404',
   },
-  
-
 ];
 
 @NgModule({
@@ -62,4 +68,4 @@ const routes: Routes = [
   ],
   exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
