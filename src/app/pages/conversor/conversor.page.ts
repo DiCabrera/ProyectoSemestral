@@ -33,7 +33,6 @@ export class ConversorPage implements OnInit {
     this.services.getDataEuro().then((data) => {
       this.getDat = data as unknown as DataInterface;
       const valor = this.getDat.serie[0].valor;
-      console.log({ valor });
       this.dataEuro = valor;
     });
     this.services.getDataDolar().then((data) => {
@@ -69,5 +68,5 @@ export class ConversorPage implements OnInit {
     console.log('dolar');
   }
 
-  ngOnInit() { }
+  ngOnInit() {}
 }

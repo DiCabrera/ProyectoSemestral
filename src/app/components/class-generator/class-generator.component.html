@@ -1,3 +1,42 @@
-<p>
-  class-generator works!
-</p>
+<ion-card class="class-generator" *ngIf="!QRData; else qrc">
+  <ion-card-header>
+    <h1>Generar clase</h1>
+  </ion-card-header>
+  <ion-card-content>
+    <ion-item>
+      <ion-label position="floating">
+        Nombre de la clase
+      </ion-label>
+      <ion-input [(ngModel)]="name"></ion-input>
+    </ion-item>
+    <ion-button shape="block" (click)="generateClass()">
+      Generar Código QR
+    </ion-button>
+  </ion-card-content>
+</ion-card>
+
+<ng-template #qrc>
+  <ion-card class="class-generator">
+    <ion-card-header>
+      <h1>{{name}}</h1>
+    </ion-card-header>
+    <ngx-qrcode [value]="QRData" class="qr-image" [width]="400"></ngx-qrcode>
+    <ion-button shape="block" (click)="stopClass()">
+      Terminar Clase
+    </ion-button>
+  </ion-card>
+  <ion-card class="class-generator" *ngIf="classInfo">
+    <ion-card-header>
+      <h1>Asistentes actuales</h1>
+    </ion-card-header>
+    <ion-item *ngFor="let attend of classInfo.attendees">
+      <ion-label>
+        <h2>{{attend.displayName}}</h2>
+        <p>{{attend.email}}</p>
+      </ion-label>
+    </ion-item>
+    <ion-button shape="block" (click)="refreshAttendees()">
+      Refrescar asistentes
+    </ion-button>
+  </ion-card>
+</ng-template>
