@@ -2,9 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { CrudService } from '../../services/crud/crud.service';
 import { InterUser } from '../../services/auth/auth.service';
 
-interface ClassInfo {
+export interface ClassInfo {
   id: string;
   name: string;
+  room?: string;
   attendees: InterUser[];
   status: 'open' | 'closed';
 }
@@ -38,6 +39,7 @@ export class ClassGeneratorComponent implements OnInit {
       attendees: [],
       status: 'open',
     };
+
     this.crud
       .create(this.classInfo, 'classes')
       .then((res) => {
@@ -48,9 +50,9 @@ export class ClassGeneratorComponent implements OnInit {
       })
       .catch((err) => console.error(err));
   }
-  stopClass() {
+  async stopClass() {
     this.classInfo.status = 'closed';
-    this.crud.update(this.classInfo, this.classInfo.id, 'classes');
+    await this.crud.update(this.classInfo, this.classInfo.id, 'classes');
     localStorage.removeItem('class_id');
     localStorage.removeItem('class_name');
     this.name = null;
