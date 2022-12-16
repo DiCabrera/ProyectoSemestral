@@ -1,4 +1,22 @@
-<p>
-  Este componente debe encargarse de marcar asistencia!
-  (leer el qr e ir a dicha dirección)
-</p>
+<ion-card *ngIf="!scanned && !error">
+  <ion-card-header>
+    <h1>Marca tu asistencia</h1>
+  </ion-card-header>
+  <ion-card-content>
+    <ion-button (click)="scan()" >Escanear</ion-button>
+  </ion-card-content>
+</ion-card>
+<ion-card *ngIf="scanned">
+  <ion-card-header>
+    <h1>Marcaste asistencia con éxito</h1>
+  </ion-card-header>
+</ion-card>
+<ion-card *ngIf="error">
+  <ion-card-header>
+    <h1>Algo salió mal</h1>
+  </ion-card-header>
+</ion-card>
+
+<div class="scanner" *ngIf="scanning">
+  <quar-scanner (scanSuccess)="onScan($event)" class="scanner__viewport"></quar-scanner>
+</div>

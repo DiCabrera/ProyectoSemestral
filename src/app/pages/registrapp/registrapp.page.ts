@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService, InterUser } from '../../services/auth/auth.service';
+import { BarcodeFormat } from '@zxing/library';
 
 @Component({
   selector: 'app-registrapp',
@@ -8,10 +9,11 @@ import { AuthService, InterUser } from '../../services/auth/auth.service';
 })
 export class RegistrappPage implements OnInit {
   isTeacher: boolean;
-  constructor(private auth: AuthService) {
-    this.isTeacher = auth.user?.role === 'teacher';
+  allowedFormats = [BarcodeFormat.QR_CODE];
+  constructor(private auth: AuthService) {}
+  scan(content: any) {
+    console.log('Escaneamos', content);
   }
-
   ngOnInit() {
     this.auth.getUser().subscribe((user: InterUser) => {
       this.isTeacher = user.role === 'teacher';

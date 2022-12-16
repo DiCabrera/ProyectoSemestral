@@ -1,45 +1,7 @@
-<ion-header class="row">
-  <ion-toolbar color="primary" class="toolbar row">
-    <div>
-      <ion-buttons slot="start">
-      </ion-buttons>
-    </div>
-
-    <div class="row">
-      <ion-title class="ion-text-capitalize">
-        {{pageTitle}}
-      </ion-title>
-      <div class="logo-duoc">
-        <img width="90px" src="../../../assets/img/logoDuoc.png">
-      </div>
-    </div>
-  </ion-toolbar>
-</ion-header>
-
-
-
-<ion-content>
-  <ion-card class="ion-text-center">
-    <ion-card-header class="title">
-      <ion-card-title class="title"></ion-card-title>
-    </ion-card-header>
-    <ion-item class="item">
-      <img class="imgs item-6" width="30%" height="30%" src="../../../assets/fotos/img_nico.jpeg">
-      <p class="carrera">Analista Programador Computacional</p>
-      <p class="description">Soy una persona que le agrada trabajar en equipo, buscando nuevos aprendizajes en mi camino
-        frente al
-        gran mundo que enfrentamos diariamente. Busco desenvolverme en el mundo de la programación. Domino dos
-        lenguas: Inglés y Castellano. </p>
-    </ion-item>
-    <ion-item class="item">
-      <img class="imgs item-6" width="30%" height="30%" src="../../../assets/fotos/img_rene.png">
-      <p class="carrera">Analista Programador Computacional</p>
-      <p class="description">Durante este periodo he desempeñado diversos roles tales como programador (Java,
-        TypeScript, Python, JavaScript), Líder
-        técnico y Analista funcional.
-      </p>
-    </ion-item>
-
-  </ion-card>
-
-</ion-content>
+<ion-card *ngIf="user !== null">
+  <ion-card-header>
+    <img width="90px" src="{{ user.photoURL }}" alt="{{ user.displayName}}">
+    <ion-card-title>{{ user.displayName }}</ion-card-title>
+    <p>{{ user.email }} | {{ user.role === 'teacher' ? 'Profesor' : 'Estudiante'}}</p>
+  </ion-card-header>
+</ion-card>

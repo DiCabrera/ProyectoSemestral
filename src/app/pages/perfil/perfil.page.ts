@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService, InterUser } from '../../services/auth/auth.service';
 
 @Component({
   selector: 'app-perfil',
@@ -6,11 +7,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./perfil.page.scss'],
 })
 export class PerfilPage implements OnInit {
-  pageTitle='Perfil de Usuario';
-  isNotLogin = true;
-  constructor() { }
-
-  ngOnInit() {
+  user: InterUser;
+  constructor(private auth: AuthService) {
+    this.user = null;
+    auth.getUser().subscribe((usr) => {
+      console.log(this.user);
+      this.user = usr;
+    });
   }
 
+  ngOnInit() {}
 }

@@ -11,6 +11,7 @@ export interface InterUser {
   displayName: string;
   email: string;
   role: 'teacher' | 'student';
+  photoURL: string;
 }
 
 @Injectable({
@@ -28,7 +29,7 @@ export class AuthService {
     this.user = null;
     this.userNotifier$ = new Subject();
 
-    this.afAuth.user.subscribe((user) => {
+    this.afAuth.user.subscribe((user: User) => {
       if (user) {
         this.syncUser(user);
       }
@@ -36,12 +37,7 @@ export class AuthService {
   }
   async login() {
     try {
-      const { user } = await this.afAuth.signInWithPopup(
-        new auth.GoogleAuthProvider()
-      );
-      localStorage.setItem('ingresado', JSON.stringify(user));
-      this.router.navigate(['home']);
-      return user;
+      await this.afAuth.signInWithRedirect(new auth.GoogleAuthProvider());
     } catch (err) {
       console.error('Error ->', err);
     }
@@ -75,6 +71,7 @@ export class AuthService {
         displayName: user.displayName,
         email: user.email,
         role: 'student',
+        photoURL: user.photoURL,
       };
 
       await this.crud.create(newUser, 'users');

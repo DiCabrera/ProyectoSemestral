@@ -17,7 +17,7 @@ export class LoginPage implements OnInit {
   pageTitle = 'login';
   isNotLogin = false;
   loading: HTMLIonLoadingElement;
-  name: string= '';
+  name = '';
 
   constructor(
     public navCtrl: NavController,
@@ -36,23 +36,12 @@ export class LoginPage implements OnInit {
   }
 
   loginWithGoogle() {
-    this.auth
-      .login()
-      .then((user) => {
-        this.presentToast('Bienvenido ' + user.displayName);
-        console.log(user.displayName);
-        this.name = user?.displayName;
-        console.log("dcdcd");
-        this.router.navigate(['home'],{ queryParams: { user: user.displayName } });
-      })
-      .catch((err) => {
-        console.error('Error ->', err);
-      });
+    this.auth.login();
   }
 
   async presentToast(message: string, duration?: number) {
     const toast = await this.toastCtrl.create({
-      message: message,
+      message,
       duration: duration ? duration : 2000,
     });
     toast.present();
