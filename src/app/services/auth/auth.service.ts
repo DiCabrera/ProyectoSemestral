@@ -8,6 +8,7 @@ import { CrudService } from '../crud/crud.service';
 import { Observable, Subject } from 'rxjs';
 
 export interface InterUser {
+  id?: string;
   displayName: string;
   email: string;
   role: 'teacher' | 'student';

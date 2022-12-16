@@ -16,10 +16,10 @@ const routes: Routes = [
     path: 'login',
     loadChildren: () =>
       import('./pages/login/login.module').then((m) => m.LoginPageModule),
-    ...canActivate(() => redirectLoggedInTo(['/home'])),
+    ...canActivate(() => redirectLoggedInTo(['/'])),
   },
   {
-    path: 'home',
+    path: '',
     loadChildren: () =>
       import('./pages/home/home.module').then((m) => m.HomePageModule),
     ...canActivate(() => redirectUnauthorizedTo(['/login'])),
@@ -51,6 +51,13 @@ const routes: Routes = [
     loadChildren: () =>
       import('./pages/registrapp/registrapp.module').then(
         (m) => m.RegistrappPageModule
+      ),
+  },
+  {
+    path: 'permisos',
+    loadChildren: () =>
+      import('./pages/permisos/permisos.module').then(
+        (m) => m.PermisosPageModule
       ),
   },
   {

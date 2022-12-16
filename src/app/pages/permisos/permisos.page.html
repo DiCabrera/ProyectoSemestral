@@ -1,0 +1,16 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Permisos de usuarios</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card *ngFor="let user of usuarios">
+    <img src="{{ user.photoURL }}" alt="{{ user.displayName}}">
+    <div>
+      <h1>{{user.displayName}}</h1>
+      <h2>{{user.email}}</h2>
+    </div>
+    <ion-button *ngIf="user.role === 'student'" (click)="setTeacher(user.id)" >Convertir en profesor</ion-button>
+  </ion-card>
+</ion-content>

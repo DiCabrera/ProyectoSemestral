@@ -7,7 +7,7 @@ import { AuthService } from './services/auth/auth.service';
 })
 export class AppComponent {
   public appPages = [
-    { title: 'Home', url: '/home', icon: 'home' },
+    { title: 'Home', url: '/', icon: 'home' },
     { title: 'Conversor', url: '/conversor', icon: 'planet' },
     { title: 'Clima', url: '/clima', icon: 'cloudy-night' },
     { title: 'About', url: '/about', icon: 'people' },

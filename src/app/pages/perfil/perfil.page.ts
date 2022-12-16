@@ -9,7 +9,7 @@ import { AuthService, InterUser } from '../../services/auth/auth.service';
 export class PerfilPage implements OnInit {
   user: InterUser;
   constructor(private auth: AuthService) {
-    this.user = null;
+    this.user = auth.user;
     auth.getUser().subscribe((usr) => {
       console.log(this.user);
       this.user = usr;
