@@ -10,7 +10,11 @@ import { BarcodeFormat } from '@zxing/library';
 export class RegistrappPage implements OnInit {
   isTeacher: boolean;
   allowedFormats = [BarcodeFormat.QR_CODE];
-  constructor(private auth: AuthService) {}
+  constructor(private auth: AuthService) {
+    if (auth.user !== null && auth.user.role === 'teacher') {
+      this.isTeacher = true;
+    }
+  }
   scan(content: any) {
     console.log('Escaneamos', content);
   }
